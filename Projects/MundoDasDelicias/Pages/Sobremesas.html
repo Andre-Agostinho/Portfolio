@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo_das_Delícias</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/hamburguer_icon2.png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../JavaScript.js/index.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+     <nav class="navbar">
+       <ul>
+         <li><a href="../">Home</a> </li>
+         <li class="dropdown">
+           <a href="../Pages/Menu.html" class="dropbtn"> Menu </a>
+           <div class="dropdown-content">
+             <a href="../Pages/Entradas.html">Entradas</a>
+             <a href="../Pages/Sopas.html">Sopas</a>
+             <a href="../Pages/Pratos_Principais.html">Pratos Principais</a>
+             <a href="../Pages/Sobremesas.html">Sobremesas</a>
+           </div>
+        </li>  
+         <li> <a href="../Pages/Contactos.html">Contactos</a> </li>
+       </ul>
+     </nav>
+     <div class="search-bar">
+       <form role="search" onsubmit="searchRecipe(event)">
+         <div class="input-group">
+           <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+           <button class="btn btn-outline-secondary" type="submit">
+             <div class="bi bi-search-heart" style="color: red;"></div>
+           </button>
+         </div>
+       </form>
+     </div> 
+</header>
+
+<nav class="burguerNav">
+  <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+  <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+  <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../Pages/Menu.html">Menu</a></li>
+      <li><a href="../Pages/Contactos.html">Contactos</a></li>
+      <li> <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+      </li>
+</nav>
+
+<nav class="sticky-navbar">
+     <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../">Home</a> </li>
+          <li class="dropdown">
+            <a href="../Pages/Menu.html" class="dropbtn"> Menu </a>
+            <div class="dropdown-content">
+              <a href="../Pages/Entradas.html">Entradas</a>
+              <a href="../Pages/Sopas.html">Sopas</a>
+              <a href="../Pages/Pratos_Principais.html">Pratos Principais</a>
+              <a href="../Pages/Sobremesas.html">Sobremesas</a>
+            </div>
+         </li>  
+          <li> <a href="../Pages/Contactos.html">Contactos</a> </li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+</nav>
+    
+
+<nav class="sticky-burguerNav">
+  <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+  <span class="menu-icon" onclick="toggleMenuBurguer()">&#9776;</span>
+  <ul class="nav-linksBurguer">
+      <li><a href="../">Home</a></li>
+      <li><a href="../Pages/Menu.html">Menu</a></li>
+      <li><a href="../Pages/Contactos.html">Contactos</a></li>
+      <li> <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+      </li>
+  </ul>
+</nav>
+  
+    
+<div class="small-straw-container">
+    <div class="small-straw">
+        <div class="small-straw-fill"></div>
+    </div>
+</div>
+
+<div class="straw-container">
+    <div class="straw">
+        <div class="straw-fill"></div>
+    </div>
+</div>
+  
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">As Nossas Sobremesas</h1>      
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Cartão de Receita 1 -->
+            <div class="col">
+                <div class="card h-100" id="Pastel de Nata">
+                    <img src="../Images/Pastel_Nata.jpeg" class="card-img-top" alt="Pastel de Nata">
+                    <div class="card-body">
+                        <h5 class="card-title">Pastel de Nata</h5>
+                        <p class="card-text">O famoso pastel de nata português, com massa folhada crocante e recheio cremoso.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 60 min</span>
+                            <span><i class="bi bi-person"></i> 12 unidades</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaPastelNata">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão de Receita 2 -->
+            <div class="col">
+                <div class="card h-100" id="Mousse de Chocolate">
+                    <img src="../Images/Mousse_Chocolate.png" class="card-img-top" alt="Mousse de Chocolate">
+                    <div class="card-body">
+                        <h5 class="card-title">Mousse de Chocolate</h5>
+                        <p class="card-text">Mousse de chocolate cremosa e aerada, uma sobremesa clássica e irresistível.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 30 min</span>
+                            <span><i class="bi bi-person"></i> 6 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaMousse">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão de Receita 3 -->
+            <div class="col">
+                <div class="card h-100" id="Pudim de Leite">
+                    <img src="../Images/Pudim_de_Leite.jpeg" class="card-img-top" alt="Pudim">
+                    <div class="card-body">
+                        <h5 class="card-title">Pudim de Leite</h5>
+                        <p class="card-text">Pudim cremoso com calda de caramelo, uma sobremesa tradicional portuguesa.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 60 min</span>
+                            <span><i class="bi bi-person"></i> 8 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaPudim">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>        
+
+            <!-- Cartão de Receita 4 -->
+            <div class="col">
+                <div class="card h-100" id="Azevias de Batata Doce">
+                    <img src="../Images/Azevias_Batata_Doce.jpg" class="card-img-top" alt="Azevias de Batata Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Azevias de Batata Doce</h5>
+                        <p class="card-text">Deliciosas azevias tradicionais portuguesas recheadas com batata doce e canela.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 45 min</span>
+                            <span><i class="bi bi-person"></i> 12 unidades</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaAzevias">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+             <!-- Cartão de Receita 5 -->
+            <div class="col">
+                <div class="card h-100" id="Pudim de Pão">
+                    <img src="../Images/Pudim_Pao.jpg" class="card-img-top" alt="Pudim de Pão">
+                    <div class="card-body">
+                        <h5 class="card-title">Pudim de Pão</h5>
+                        <p class="card-text">Um pudim delicioso feito com pão, leite e açúcar, perfeito para aproveitar sobras.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 60 min</span>
+                            <span><i class="bi bi-person"></i> 8 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaPudimPao">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Cartão de Receita 6 -->
+            <div class="col">
+                <div class="card h-100" id="Semifrio de Bolacha">
+                    <img src="../Images/Semifrio_Bolacha.jpg" class="card-img-top" alt="Semifrio de Bolacha">
+                    <div class="card-body">
+                        <h5 class="card-title">Semifrio de Bolacha</h5>
+                        <p class="card-text">Uma sobremesa deliciosa e fácil de fazer, à base de bolachas e natas.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 30 min</span>
+                            <span><i class="bi bi-person"></i> 8 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaSemifrioBolacha">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </main>
+
+
+    <!-- Modal para Receita de Pastel de Nata -->
+    <div class="modal fade" id="receitaPastelNata" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pastel de Nata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>1 massa folhada</li>
+                        <li>500ml de leite</li>
+                        <li>6 gemas</li>
+                        <li>200g de açúcar</li>
+                        <li>30g de farinha</li>
+                        <li>1 casca de limão</li>
+                        <li>1 pau de canela</li>
+                        <li>Canela em pó para polvilhar</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Prepare a massa folhada em forminhas</li>
+                        <li>Ferva o leite com a casca de limão e canela</li>
+                        <li>Misture as gemas, açúcar e farinha</li>
+                        <li>Adicione o leite quente aos poucos</li>
+                        <li>Leve ao fogo até engrossar</li>
+                        <li>Preencha as forminhas</li>
+                        <li>Asse em forno muito quente (250°C)</li>
+                        <li>Polvilhe com canela</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>O forno deve estar muito quente para criar as manchas características</li>
+                        <li>A massa deve estar bem fina</li>
+                        <li>Sirva morno ou à temperatura ambiente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Receita de Mousse de Chocolate -->
+    <div class="modal fade" id="receitaMousse" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mousse de Chocolate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>200g de chocolate meio amargo</li>
+                        <li>4 ovos</li>
+                        <li>2 colheres de açúcar</li>
+                        <li>1 pitada de sal</li>
+                        <li>Raspas de chocolate para decorar</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Derreta o chocolate em banho-maria</li>
+                        <li>Separe as gemas das claras</li>
+                        <li>Bata as claras em neve com o açúcar</li>
+                        <li>Misture as gemas ao chocolate derretido</li>
+                        <li>Incorpore delicadamente as claras</li>
+                        <li>Distribua em taças</li>
+                        <li>Leve à geladeira por 3 horas</li>
+                        <li>Decore com raspas de chocolate</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Use chocolate de boa qualidade</li>
+                        <li>As claras devem estar bem firmes</li>
+                        <li>Misture delicadamente para manter a aeração</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Receita de Pudim -->
+    <div class="modal fade" id="receitaPudim" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pudim de Leite</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>Para a calda:</li>
+                        <li>1 xícara de açúcar</li>
+                        <li>1/2 xícara de água</li>
+                        <br>
+                        <li>Para o pudim:</li>
+                        <li>1 lata de leite condensado</li>
+                        <li>2 medidas da lata de leite</li>
+                        <li>3 ovos inteiros</li>
+                        <li>1 colher de essência de baunilha</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Prepare a calda de caramelo</li>
+                        <li>Forre uma forma com a calda</li>
+                        <li>Bata todos os ingredientes do pudim no liquidificador</li>
+                        <li>Despeje na forma caramelizada</li>
+                        <li>Cozinhe em banho-maria por 1 hora</li>
+                        <li>Deixe esfriar</li>
+                        <li>Leve à geladeira por 4 horas</li>
+                        <li>Desenforme e sirva</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>A água do banho-maria deve estar quente</li>
+                        <li>Cubra com papel alumínio ao assar</li>
+                        <li>Para desenformar, passe a forma rapidamente em água quente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Receita de Azevias de Batata Doce -->
+    <div class="modal fade" id="receitaAzevias" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Azevias de Batata Doce</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>500g de batata doce</li>
+                        <li>250g de farinha</li>
+                        <li>100ml de azeite</li>
+                        <li>Sal q.b.</li>
+                        <li>Canela em pó</li>
+                        <li>Açúcar para polvilhar</li>
+                        <li>Óleo para fritar</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Coza a batata doce com casca. Depois de cozida, descasque e faça puré.</li>
+                        <li>Numa tigela, misture a farinha com o azeite e uma pitada de sal.</li>
+                        <li>Amasse bem até obter uma massa homogénea.</li>
+                        <li>Estenda a massa finamente e corte em círculos.</li>
+                        <li>Coloque o puré de batata doce temperado com canela no centro.</li>
+                        <li>Dobre ao meio e feche bem as bordas com um garfo.</li>
+                        <li>Frite em óleo quente até dourarem.</li>
+                        <li>Escorra sobre papel absorvente.</li>
+                        <li>Polvilhe com açúcar e canela.</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Certifique-se que a massa está bem fechada para não abrir durante a fritura</li>
+                        <li>O óleo deve estar bem quente para uma fritura perfeita</li>
+                        <li>Sirva ainda quentes, polvilhadas com açúcar e canela</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+     <!-- Modal para Receita de Pudim de Pão -->
+     <div class="modal fade" id="receitaPudimPao" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pudim de Pão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>200g de pão amanhecido</li>
+                        <li>500ml de leite</li>
+                        <li>3 ovos</li>
+                        <li>200g de açúcar</li>
+                        <li>1 colher de sopa de essência de baunilha</li>
+                        <li>Canela em pó a gosto</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Preaqueça o forno a 180°C.</li>
+                        <li>Em uma tigela, coloque o pão cortado em pedaços e adicione o leite. Deixe de molho por 15 minutos.</li>
+                        <li>Adicione os ovos, açúcar, essência de baunilha e canela ao pão e misture bem até obter uma mistura homogênea.</li>
+                        <li>Despeje a mistura em uma forma caramelizada.</li>
+                        <li>Cozinhe em banho-maria por cerca de 1 hora.</li>
+                        <li>Deixe esfriar, desenforme e sirva.</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Você pode adicionar frutas secas ou chocolate à mistura para um toque especial.</li>
+                        <li>Sirva com calda de caramelo ou sorvete.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal para Receita de Semifrio de Bolacha -->
+     <div class="modal fade" id="receitaSemifrioBolacha" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Semifrio de Bolacha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>1 pacote de bolachas Maria</li>
+                        <li>500g de queijo creme</li>
+                        <li>200g de açúcar</li>
+                        <li>200ml de natas para bater</li>
+                        <li>1 colher de sopa de essência de baunilha</li>
+                        <li>1 xícara de café forte (frio) para molhar as bolachas</li>
+                    </ul>
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Em uma tigela, bata o queijo creme com o açúcar e a essência de baunilha até ficar homogêneo.</li>
+                        <li>Em outra tigela, bata as natas até obter picos firmes.</li>
+                        <li>Incorpore delicadamente as natas ao creme de queijo.</li>
+                        <li>Molhe rapidamente as bolachas no café e faça uma camada no fundo de uma forma.</li>
+                        <li>Coloque uma camada do creme sobre as bolachas e repita o processo até terminar os ingredientes.</li>
+                        <li>Finalize com uma camada de creme.</li>
+                        <li>Decore por cima com bolacha triturada e leve ao frigorífico por, pelo menos, 4 horas antes de servir.</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Decore com chocolate ralado ou frutas frescas antes de servir.</li>
+                        <li>Você pode substituir o café por leite ou uma bebeida de chocolate, se preferir.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="break-bar"></div>
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-3 col-6 mb-3">
+                    <h5>Mundo das Delícias</h5>
+                    <p>Sua experiência gastronômica única</p>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <h5>Contato</h5>
+                    <p>Email: contato@mundodasdelicias.com</p>
+                    <p>Tel: (00) 1234-5678</p>
+                </div>
+                <div class="col-md-2 col-6 offset-md-1 mb-3">
+                    <h5>Links</h5>
+                    <div class="d-flex flex-column">
+                        <a href="../index.html">Home</a>
+                        <a href="../Pages/Menu.html"> Menu </a>
+                        <a href="../Pages/Contactos.html">Contactos</a>
+                    </div>
+                </div>
+                  <div class="col-md-3 col-6 mb-3">
+                    <h5>Siga-nos</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.twitter.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+</body>
+</html>

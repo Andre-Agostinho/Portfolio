@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo_das_Delícias</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/hamburguer_icon2.png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../JavaScript.js/index.js" defer></script>
+</head>
+
+
+<body>
+  <header class="header">
+    <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+     <nav class="navbar">
+       <ul>
+         <li><a href="../">Home</a> </li>
+         <li class="dropdown">
+           <a href="../Pages/Menu.html" class="dropbtn"> Menu </a>
+           <div class="dropdown-content">
+             <a href="../Pages/Entradas.html">Entradas</a>
+             <a href="../Pages/Sopas.html">Sopas</a>
+             <a href="../Pages/Pratos_Principais.html">Pratos Principais</a>
+             <a href="../Pages/Sobremesas.html">Sobremesas</a>
+           </div>
+        </li>  
+         <li> <a href="../Pages/Contactos.html">Contactos</a> </li>
+       </ul>
+     </nav>
+     <div class="search-bar">
+       <form role="search" onsubmit="searchRecipe(event)">
+         <div class="input-group">
+           <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+           <button class="btn btn-outline-secondary" type="submit">
+             <div class="bi bi-search-heart" style="color: red;"></div>
+           </button>
+         </div>
+       </form>
+     </div> 
+</header>
+
+<nav class="burguerNav">
+  <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+  <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+  <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../Pages/Menu.html">Menu</a></li>
+      <li><a href="../Pages/Contactos.html">Contactos</a></li>
+      <li> <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+      </li>
+</nav>
+
+<nav class="sticky-navbar">
+     <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../">Home</a> </li>
+          <li class="dropdown">
+            <a href="../Pages/Menu.html" class="dropbtn"> Menu </a>
+            <div class="dropdown-content">
+              <a href="../Pages/Entradas.html">Entradas</a>
+              <a href="../Pages/Sopas.html">Sopas</a>
+              <a href="../Pages/Pratos_Principais.html">Pratos Principais</a>
+              <a href="../Pages/Sobremesas.html">Sobremesas</a>
+            </div>
+         </li>  
+          <li> <a href="../Pages/Contactos.html">Contactos</a> </li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+</nav>
+    
+
+<nav class="sticky-burguerNav">
+  <img class="logo" src="../Images/Logo.png" alt="Logo"></img>
+  <span class="menu-icon" onclick="toggleMenuBurguer()">&#9776;</span>
+  <ul class="nav-linksBurguer">
+      <li><a href="../">Home</a></li>
+      <li><a href="../Pages/Menu.html">Menu</a></li>
+      <li><a href="../Pages/Contactos.html">Contactos</a></li>
+      <li> <div class="search-bar">
+        <form role="search" onsubmit="searchRecipe(event)">
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control" placeholder="Procurar..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+              <div class="bi bi-search-heart" style="color: red;"></div>
+            </button>
+          </div>
+        </form>
+      </div> 
+      </li>
+  </ul>
+</nav>
+
+    
+<div class="small-straw-container">
+    <div class="small-straw">
+        <div class="small-straw-fill"></div>
+    </div>
+</div>
+
+<div class="straw-container">
+    <div class="straw">
+        <div class="straw-fill"></div>
+    </div>
+</div>
+  
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">Os Pratos Principais</h1>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Cartão de Receita 1 -->
+            <div class="col">
+                <div class="card h-100" id="Bacalhau com Natas">
+                    <img src="../Images/Bacalhau_com_Natas.jpeg" class="card-img-top" alt="Bacalhau com Natas">
+                    <div class="card-body">
+                        <h5 class="card-title">Bacalhau com Natas</h5>
+                        <p class="card-text">Clássico prato português de bacalhau gratinado com molho bechamel e natas.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 60 min</span>
+                            <span><i class="bi bi-person"></i> 6 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaBacalhau">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão de Receita 2 -->
+            <div class="col">
+                <div class="card h-100" id="Frango Assado com Batatas">
+                    <img src="../Images/Frango_assado_Batatas.jpeg" class="card-img-top" alt="Frango Assado">
+                    <div class="card-body">
+                        <h5 class="card-title">Frango Assado com Batatas</h5>
+                        <p class="card-text">Frango dourado e suculento com batatas assadas e ervas aromáticas.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 90 min</span>
+                            <span><i class="bi bi-person"></i> 4 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaFrango">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão de Receita 3 -->
+            <div class="col">
+                <div class="card h-100" id="Feijoada à Portuguesa">
+                    <img src="../Images/Feijoada_Portuguesa.jpg" class="card-img-top" alt="Feijoada">
+                    <div class="card-body">
+                        <h5 class="card-title">Feijoada à Portuguesa</h5>
+                        <p class="card-text">Rica feijoada com diversos tipos de carnes e enchidos portugueses.</p>
+                        <div class="recipe-info">
+                            <span><i class="bi bi-clock"></i> 120 min</span>
+                            <span><i class="bi bi-person"></i> 8 porções</span>
+                        </div>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaFeijoada">
+                            Ver Receita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+
+         <!-- Cartão de Receita 4 -->
+        <div class="col">
+            <div class="card h-100" id="Bacalhau à Zé do Pipo">
+                <img src="../Images/Bacalhau_Ze_Pipo.jpg" class="card-img-top" alt="Bacalhau à Zé do Pipo">
+                <div class="card-body">
+                    <h5 class="card-title">Bacalhau à Zé do Pipo</h5>
+                    <p class="card-text">Um prato tradicional português, feito com bacalhau, purê de batata e maionese.</p>
+                    <div class="recipe-info">
+                        <span><i class="bi bi-clock"></i> 90 min</span>
+                        <span><i class="bi bi-person"></i> 6 porções</span>
+                    </div>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#receitaBacalhauZeDoPipo">
+                        Ver Receita
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Modal para Receita de Bacalhau com Natas -->
+    <div class="modal fade" id="receitaBacalhau" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bacalhau com Natas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>800g de bacalhau dessalgado</li>
+                        <li>1kg de batatas</li>
+                        <li>2 cebolas médias</li>
+                        <li>4 dentes de alho</li>
+                        <li>500ml de natas para culinária</li>
+                        <li>50g de manteiga</li>
+                        <li>50g de farinha</li>
+                        <li>500ml de leite</li>
+                        <li>Noz-moscada a gosto</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Queijo ralado para gratinar</li>
+                    </ul>
+
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Cozinhe o bacalhau e desfie-o</li>
+                        <li>Corte as batatas em palha e frite-as</li>
+                        <li>Refogue a cebola e o alho na manteiga</li>
+                        <li>Prepare o molho bechamel com a farinha, manteiga e leite</li>
+                        <li>Adicione as natas ao bechamel</li>
+                        <li>Misture o bacalhau, as batatas e o molho</li>
+                        <li>Coloque em um tabuleiro</li>
+                        <li>Cubra com queijo ralado</li>
+                        <li>Leve ao forno para gratinar</li>
+                    </ol>
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Dessalgue o bacalhau por 24-48 horas, trocando a água várias vezes</li>
+                        <li>As batatas podem ser assadas em vez de fritas para uma versão mais leve</li>
+                        <li>O prato pode ser preparado com antecedência e gratinado na hora de servir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Receita de Frango Assado -->
+    <div class="modal fade" id="receitaFrango" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Frango Assado com Batatas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>1 frango inteiro</li>
+                        <li>1kg de batatas</li>
+                        <li>4 dentes de alho</li>
+                        <li>2 limões</li>
+                        <li>Alecrim e tomilho frescos</li>
+                        <li>Azeite de oliva</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Pimentão doce</li>
+                        <li>Vinho branco</li>
+                    </ul>
+
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Tempere o frango com sal, pimenta, alho e ervas</li>
+                        <li>Esprema o limão sobre o frango</li>
+                        <li>Descasque e corte as batatas</li>
+                        <li>Coloque o frango e as batatas num tabuleiro</li>
+                        <li>Regue com azeite e vinho branco</li>
+                        <li>Asse em forno pré-aquecido a 180°C</li>
+                        <li>Vire o frango na metade do tempo</li>
+                        <li>Asse até dourar bem</li>
+                    </ol>
+
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Deixe o frango marinando por algumas horas antes de assar</li>
+                        <li>Regue o frango com seu próprio molho durante o cozimento</li>
+                        <li>Verifique o ponto com um termômetro culinário</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Receita de Feijoada -->
+    <div class="modal fade" id="receitaFeijoada" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Feijoada à Portuguesa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>500g de feijão vermelho</li>
+                        <li>200g de chouriço</li>
+                        <li>200g de morcela</li>
+                        <li>200g de entrecosto</li>
+                        <li>200g de orelha de porco</li>
+                        <li>2 cebolas</li>
+                        <li>4 dentes de alho</li>
+                        <li>2 cenouras</li>
+                        <li>2 folhas de louro</li>
+                        <li>Azeite</li>
+                        <li>Sal e pimenta</li>
+                    </ul>
+
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Deixe o feijão de molho por 12 horas</li>
+                        <li>Cozinhe o feijão com as carnes</li>
+                        <li>Refogue a cebola e o alho no azeite</li>
+                        <li>Adicione as cenouras e o louro</li>
+                        <li>Junte ao feijão e as carnes</li>
+                        <li>Cozinhe em fogo baixo até apurar</li>
+                        <li>Ajuste os temperos</li>
+                    </ol>
+
+                    <h6>Acompanhamentos Sugeridos:</h6>
+                    <ul>
+                        <li>Arroz branco e/ou batatas cozidas</li>
+                        <li>Couve portuguesa refogada</li>
+                        <li>Laranja às rodelas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal para Receita de Bacalhau à Zé do Pipo -->
+      <div class="modal fade" id="receitaBacalhauZeDoPipo" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bacalhau à Zé do Pipo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredientes:</h6>
+                    <ul>
+                        <li>500g de bacalhau dessalgado</li>
+                        <li>4 batatas médias</li>
+                        <li>2 cebolas</li>
+                        <li>2 dentes de alho</li>
+                        <li>200g de maionese</li>
+                        <li>Azeite a gosto</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Queijo ralado a gosto</li>
+                    </ul>
+
+                    <h6>Modo de Preparo:</h6>
+                    <ol>
+                        <li>Coza o bacalhau em água fervente por cerca de 15 minutos. Reserve.</li>
+                        <li>Coza as batatas em água e sal até ficarem macias. Faça um purê e reserve.</li>
+                        <li>Em uma frigideira, refogue as cebolas e o alho picados em azeite até ficarem dourados.</li>
+                        <li>Desfie o bacalhau e misture com as cebolas refogadas. Tempere com sal e pimenta.</li>
+                        <li>Num recipiente para levar ao forno, coloque uma camada de purê de batata, seguida da mistura de bacalhau e finalize com mais purê.</li>
+                        <li>Espalhe a maionese por cima e polvilhe com queijo ralado.</li>
+                        <li>Leve ao forno preaquecido a 180°C por cerca de 30 minutos, até dourar.</li>
+                    </ol>
+
+                    <h6>Dicas:</h6>
+                    <ul>
+                        <li>Sirva com uma salada verde para acompanhar.</li>
+                        <li>Você pode adicionar azeitonas para um toque extra de sabor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="break-bar"></div>
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-3 col-6 mb-3">
+                    <h5>Mundo das Delícias</h5>
+                    <p>Sua experiência gastronômica única</p>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <h5>Contato</h5>
+                    <p>Email: contato@mundodasdelicias.com</p>
+                    <p>Tel: (00) 1234-5678</p>
+                </div>
+                <div class="col-md-2 col-6 offset-md-1 mb-3">
+                    <h5>Links</h5>
+                    <div class="d-flex flex-column">
+                        <a href="../index.html">Home</a>
+                        <a href="../Pages/Menu.html"> Menu </a>
+                        <a href="../Pages/Contactos.html">Contactos</a>
+                    </div>
+                </div>
+                  <div class="col-md-3 col-6 mb-3">
+                    <h5>Siga-nos</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.twitter.com/" class="me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+</body>
+</html>

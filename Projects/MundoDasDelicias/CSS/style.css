@@ -1,0 +1,577 @@
+
+.header {
+  display: flex;
+  padding: 20px 25px;
+  background-color: #fbf8f5;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+#body {
+  background-color: #f5881f;
+}
+
+@media (min-width: 760px) {
+.sticky-navbar {
+  display: none;  
+}
+
+.sticky-burguerNav {
+  display: none;
+}
+
+.sticky-navbar.active {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 25px;
+  background-color: #fbf8f5;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: padding 0.3s ease;
+  height: 110px;
+}
+
+
+.sticky-navbar.active .logo {
+  transform: scale(0.6);
+  transition: transform 0.3s ease;
+}
+}
+
+.straw-container {
+    width: 100%; 
+    height: 25px; 
+    position: relative; 
+    overflow: hidden;
+}
+
+.straw {
+    width: 100%;
+    height: 100%;
+    background-color: #7dc142; 
+    position: relative; 
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+
+.straw-fill {
+    width: 0; 
+    height: 100%;
+    background-color: #f5871f5a; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+.straw::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.4) 10%,
+        rgba(255, 255, 255, 0.4) 15%,
+        transparent 10%,
+        transparent 20%
+    );
+    pointer-events: none;
+}
+
+.burguerNav {
+  display: none;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  margin-left: 3%;
+  object-fit: fit;
+  transition: transform 0.3s ease;
+}
+
+.navbar {
+  font-size: 22px;
+  font: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar ul,li {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar a {
+  transition: color 0.5s;
+}
+.navbar a:hover {
+  display: inline-block;
+  transform: scale(1.1);
+  background-color: #157347;
+  padding: 8px 10px;
+  border-radius: 25px;
+  text-align: center;
+  width: 100%;
+  color: whitesmoke;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #157347;
+  padding: 8px 10px;
+  border-radius: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: rgb(4, 4, 4);
+  text-align: center;
+  text-decoration: none;
+  padding: 0 10px;
+  width: 100%;
+  font-size:xx-large;
+  font-weight: 600;
+}
+
+/* esconde os botoes dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 160px;
+  padding: 8px 16px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 102;
+  border-radius: 50px;
+  transition: 1s;
+}
+
+/* CSS interior botao dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size:x-large;
+}
+
+/* cor de fundo dos botoes dropdown */
+.dropdown-content a:hover {
+  background-color: rgba(245, 135, 31, 0.765);
+  border-radius: 25px;
+  padding: 8px 10px;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+/* ativa dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.search-bar {
+  display: block;
+  right: 25px;
+  align-items: center;
+  background-color: #fff;
+  border: 2px, solid, #040404;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.search-bar .input-group {
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+.search-bar button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #dedada;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #d0d0d0;
+}
+
+.search-bar .bi {
+  font-size: 18px;
+  color: #333;
+}
+
+.dropdown-message {
+  display: block; 
+  text-align: left;
+  padding: 10px; 
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fffdff; 
+  background-color: rgb(40, 167, 69); 
+  border: 2px solid #fbf8f5; 
+  border-radius: 5px; 
+  margin-top: 5px; 
+  position: absolute;
+  width: 22%; 
+  z-index: 1000; 
+  right: 22px;
+  transform: translateY(58px); 
+  transition: opacity 0.3s ease; 
+  opacity: 0; 
+}
+
+
+#no-results-message {
+  opacity: 1; 
+}
+
+.close-btn {
+  background: none; 
+  border: none; 
+  color: #000100; 
+  font-size: 2rem; 
+  position: absolute;
+  top: -10px; 
+  right: 2px; 
+  cursor: pointer; 
+}
+
+.close-btn:hover {
+  color: #a94442;
+}
+
+
+.carousel-item {
+  height: 500px; 
+}
+
+.carousel-item img {
+  object-fit: contain;
+  height: 100%;
+  
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1);
+    background-color: #e11414; 
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: -30px ;
+  line-height: 2;
+}
+
+.carousel-progress {
+  position: absolute;
+  height: 5px;
+   width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  top: 0;
+}
+
+.carousel-progress-bar {
+  width: auto;
+  height: 100%;
+  background: #040404;
+  width: 0;
+  animation: progress-animation 5s linear infinite;
+}
+
+@keyframes progress-animation {
+  0% {
+      width: 0%;
+  }
+  100% {
+      width: 100%;
+  }
+}
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+  }
+
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  background-color: #28a7461f;
+}
+
+.recipe-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px 10px 0 0;
+}
+
+.recipe-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.recipe-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.recipe-description {
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  margin: 10px
+}
+
+#receitas-semana h2 {
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  font-size: 3rem;
+}
+
+#receitas-semana h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #28a745;
+  margin: 10px auto;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: #666;
+}
+
+.recipe-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.modal-body ul, .modal-body ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-body li {
+  margin-bottom: 8px;
+}
+
+
+@media (max-width: 760px) {
+  .header {
+    display: none;
+  }
+
+  .sticky-navbar {
+    display: none;
+  }
+
+  .sticky-navbar.active {
+    display: none;
+  }
+
+  .sticky-burguerNav {
+    display: none;
+  }
+
+  .nav-linksBurguer {
+    display: none;
+  }
+  
+  .nav-links, .search-bar {
+    display: none;
+   }
+
+  .burguerNav {
+    display: block;
+    padding-left: 1px;
+    background-color: #157347;
+  }
+
+  li a ul, .nav-links, .search-bar {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .logo {
+    margin: 10px;
+    transform: scale(0.9);
+  }
+
+  .menu-icon {
+    position: absolute;
+    font-size: 60px;
+    font-weight: 700;
+    margin-left: 5%;
+    top: 9%;
+  } 
+
+  
+.search-bar {
+  background-color: #fff;
+  border: 2px, solid, #040404;
+  overflow: hidden;
+}
+
+.search-bar .input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+.search-bar button {
+  display: flex;
+  margin-right: auto;
+  justify-content: space-between;
+  border: none;
+  background-color: #dedada;
+  padding: 8px 12px;
+  touch-action:auto;
+}
+
+
+.sticky-burguerNav.active{
+  display: inline-block;
+  position: sticky;
+  height: 115px;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  z-index: 100;
+  background-color: navajowhite;
+}
+
+.sticky-burguerNav.active .logo {
+  transform: scale(0.55);
+  transition: transform 0.3s ease;
+  margin-top: -37px;
+}
+
+.sticky-burguerNavLinks{
+  display: block;
+  background-color: navajowhite;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 50%;
+}
+
+}
+
+
+.small-straw-container {
+    width: 100%; 
+    height: 15px; 
+    position:sticky; 
+    overflow: hidden; 
+    display: none; 
+    z-index: 101;
+    top: 110px;
+}
+
+.small-straw {
+    width: 100%;
+    height: 100%;
+    background-color: #7dc142; 
+    position: relative; 
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+
+.small-straw-fill {
+    width: 0;
+    height: 100%;
+    background-color: #f5871f5a;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+
+.small-straw::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.4) 10%,
+        rgba(255, 255, 255, 0.4) 15%,
+        transparent 10%,
+        transparent 20%
+    );
+    pointer-events: none;
+}
+
+
+
