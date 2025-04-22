@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
 
-  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <script src="js/javascript.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,18 +20,96 @@
   <div data-aos="flip-up">
   <div id="mainContent">
     <header>
-      <button id="toggleTheme" class="theme-toggle">🌙</button>
-      <h1>Hi, I'm André</h1>
-      <p>Welcome to my creative work</p>
+      <button id="toggleThemeMain" class="theme-toggle">🌙</button>
+      <h1>Olá, I'm André</h1>
+      <p>Welcome to my creative portfolio</p>
     </header>
 
-    <main class="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="Projects/MundoDasDelicias/index.html">Mundo das Delícias</a></li>
-        <li><a href="Projects/SpookyGames/index.html">Spooky Games</a></li>
-      </ul>
-    </main>
+    <div class="sticky-header" id="stickyHeader">
+      <span class="portfolio-title">André Agostinho Portfolio</span>
+      <button id="toggleThemeSticky" class="theme-toggle">🌙</button>
+    </div>
+
+      <div class="container">
+        <!-- Left Column -->
+        <aside class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="#me">Me</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#experience">Experience</a></li>
+            </ul>
+          </nav>
+
+          <div class="social-icons">
+            <a href="https://www.figma.com/@AndreAgostinho" target="_blank" title="Figma">
+              <img src="images/figma.png" alt="Figma" />
+            </a>
+            <a href="https://github.com/Andre-Agostinho" target="_blank" title="GitHub">
+              <img src="images/github.png" alt="GitHub" />
+            </a>
+            <a href="https://www.linkedin.com/in/andr%C3%A9-agostinho-18597610b/" target="_blank" title="LinkedIn">
+              <img src="images/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+          
+
+        </aside>
+  
+        <!-- Right Column -->
+        <main class="content">
+          <section id="me">
+            <h2>Me</h2>
+            <p>Hello! I’m André — I recently graduated on a frontend developer course. <br/> I´m a person who enjoys blending interactive design with a pleasante experience for the user. </p>
+          </section>
+  
+          <section id="projects">
+            <h2>Projects</h2>
+              <p>In this section, you’ll find some of my personal projects. Some were built during a Front-End Development course, others just for fun — but all were made to keep growing as a Front-End Developer.</p> <br/> 
+            <div class="accordion">
+              <button class="accordion-header">MundoDasDelicias</button>
+              <div class="accordion-body">
+                <p>A food-themed interactive website with an animated landing page and playful UI touches. Built to be fully responsive across all screen sizes and user types.
+                  <br/><br/> HTML CSS JS Bootstrap  </p>
+                <a href="Projects/MundoDasDelicias/index.html" target="_blank">Visit MundoDasDelicias</a>
+              </div>
+            </div>
+  
+            <div class="accordion">
+              <button class="accordion-header">SpookyGames</button>
+              <div class="accordion-body">
+                <p>A Halloween-themed website showcasing a curated collection of video games with spooky atmospheres, action-packed moments, and a touch of jump-scare vibes.
+                <br/><br/> HTML CSS Bootstrap  </p>
+                <a href="Projects/SpookyGames/index.html" target="_blank">Visit SpookyGames</a>
+              </div>
+            </div>
+          </section>
+  
+          <section id="experience">
+            <h2>Experience</h2>
+              <p>I'm currently diving into web development on my own and building some fun, experimental interfaces—just exploring and sharpening my skills while looking for my next opportunity.</p> <br/> 
+                <div class="accordion">
+                  <button class="accordion-header">Cei, by Zipor</button>
+                <div class="accordion-body">
+                  <p>Internship from FrontEnd Developer course
+                    <br/> <br/> I worked with Google Sheets scripts, created image templates for a vertical cube display, and was responsible for migrating a website to a new domain and hosting server, among other tasks
+                  </p>
+                </div>
+              </div>
+          </section>
+
+          <div class="cv-button">
+            If you'd like to get in touch, share some feedback, or just say "hi 👋",
+            <br/> feel free to drop me a message at: 
+            <a href="mailto:andrefpa90@gmail.com">andrefpa90@gmail.com</a>
+            <br/><br/> <a href="https://github.com/yourusername/yourrepo/raw/main/CV_AndréAgostinho.pdf" target="_blank">
+              📄 View My CV
+            </a>
+          </div>
+          
+
+        </main>
+      </div>
 
     <footer>
       <p>© 2025 André Agostinho</p>

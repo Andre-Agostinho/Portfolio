@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.removeEventListener("wheel", handleScroll);
     window.removeEventListener("touchmove", handleTouchMove);
     aOs();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   // ---- testing the debounce system ----
@@ -75,18 +76,18 @@ function aOs() {
 
 
 function modeToggler() {
-    const toggleButton = document.getElementById("toggleTheme");
+  const toggleButtons = [document.getElementById("toggleThemeMain"), document.getElementById("toggleThemeSticky")];
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const userTheme = localStorage.getItem("theme");
   
     function setTheme(mode) {
       if (mode === "light") {
         document.body.classList.add("light-mode");
-        toggleButton.innerHTML = "🌞";
+        toggleButtons.forEach(btn => btn.innerHTML = "🌞");
         localStorage.setItem("theme", "light");
       } else {
         document.body.classList.remove("light-mode");
-        toggleButton.innerHTML = "🌙";
+        toggleButtons.forEach(btn => btn.innerHTML = "🌙");
         localStorage.setItem("theme", "dark");
       }
     }
@@ -97,11 +98,40 @@ function modeToggler() {
       setTheme("light");
     }
   
-    toggleButton.addEventListener("click", () => {
-      const isLight = document.body.classList.contains("light-mode");
-      setTheme(isLight ? "dark" : "light");
+    toggleButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const isLight = document.body.classList.contains("light-mode");
+        setTheme(isLight ? "dark" : "light");
+      });
     });
+    
   }
   
   document.addEventListener("DOMContentLoaded", modeToggler);
+  
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".accordion-header");
+  
+    headers.forEach((header) => {
+      header.addEventListener("click", () => {
+        const parent = header.parentElement;
+        parent.classList.toggle("open");
+      });
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const stickyHeader = document.getElementById("stickyHeader");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        stickyHeader.classList.add("visible");
+      } else {
+        stickyHeader.classList.remove("visible");
+      }
+    });
+  });
   
