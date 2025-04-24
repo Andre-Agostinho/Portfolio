@@ -127,7 +127,7 @@ function modeToggler() {
     const stickyHeader = document.getElementById("stickyHeader");
   
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 140) {
         stickyHeader.classList.add("visible");
       } else {
         stickyHeader.classList.remove("visible");
@@ -135,3 +135,19 @@ function modeToggler() {
     });
   });
   
+
+  function toggleMenu() {
+    const menuLinks = document.querySelector('.sticky-menuLinks');
+    menuLinks.classList.toggle('sticky-menuLinksShow');
+
+    const imageMenu = document.querySelector('.tome_portal');
+    
+
+    if (imageMenu.src.includes('town_portal.png')) {
+      imageMenu.src = 'images/open_book_portal.png';
+      imageMenu.classList.add('open')
+    } else {
+      imageMenu.src = 'images/town_portal.png';
+      imageMenu.classList.add('closed')
+    }
+}

@@ -465,6 +465,7 @@ li a, .dropbtn {
     font-weight: 700;
     margin-left: 5%;
     top: 9%;
+    cursor: progress;
   } 
 
   
