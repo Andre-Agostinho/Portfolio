@@ -108,8 +108,6 @@ function modeToggler() {
   }
   
   document.addEventListener("DOMContentLoaded", modeToggler);
-  
-
 
   document.addEventListener("DOMContentLoaded", () => {
     const headers = document.querySelectorAll(".accordion-header");
@@ -117,7 +115,17 @@ function modeToggler() {
     headers.forEach((header) => {
       header.addEventListener("click", () => {
         const parent = header.parentElement;
-        parent.classList.toggle("open");
+        const isOpen = parent.classList.contains("open");
+
+        document.querySelectorAll(".accordion").forEach(acc => {
+          acc.classList.remove("open");
+          acc.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
+        });
+  
+        if (!isOpen) {
+          parent.classList.add("open");
+          header.setAttribute("aria-expanded", "true");
+        }
       });
     });
   });
@@ -143,11 +151,9 @@ function modeToggler() {
     const imageMenu = document.querySelector('.tome_portal');
     
 
-    if (imageMenu.src.includes('town_portal.png')) {
+    if (imageMenu.src.includes('town-portal.png')) {
       imageMenu.src = 'images/open_book_portal.png';
-      imageMenu.classList.add('open')
     } else {
-      imageMenu.src = 'images/town_portal.png';
-      imageMenu.classList.add('closed')
+      imageMenu.src = 'images/town-portal.png';
     }
 }

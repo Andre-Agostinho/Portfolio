@@ -28,7 +28,7 @@
     <div class="sticky-header" id="stickyHeader">
       <span class="portfolio-title">André Agostinho Portfolio</span>
       <button id="toggleThemeSticky" class="theme-toggle">🌙</button>
-      <div> <span class="sticky-menuIcon" onclick="toggleMenu()"> <img src="images/town_portal.png" class="tome_portal"/>
+      <div> <span class="sticky-menuIcon" onclick="toggleMenu()"> <img src="images/town-portal.png" class="tome_portal"/>
       <ul class="sticky-menuLinks" >
         <li><a href="#me">Me</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -76,19 +76,30 @@
             <h2>Projects</h2>
               <p>In this section, you’ll find some of my personal projects. Some were built during a Front-End Development course, others just for fun — but all were made to keep growing as a Front-End Developer.</p> <br/> 
             <div class="accordion">
-              <button class="accordion-header">MundoDasDelicias</button>
+              <button class="accordion-header" aria-expanded="false">MundoDasDelicias</button>
               <div class="accordion-body">
-                <p>A food-themed interactive website with an animated landing page and playful UI touches. Built to be fully responsive across all screen sizes and user types.
-                  <br/><br/> HTML CSS JS Bootstrap  </p>
+                <p>A food-themed interactive website with an animated landing page and playful UI touches. Built to be fully responsive across all screen sizes and user types. <br/>
+                 <div class="tech-stack">
+                  <span class="tech-card">HTML</span>
+                  <span class="tech-card">CSS</span>
+                  <span class="tech-card">JS</span>
+                  <span class="tech-card">Bootstrap </span>
+                </div>
+                </p> <br/>
                 <a href="Projects/MundoDasDelicias/index.html" target="_blank">Visit MundoDasDelicias</a>
               </div>
             </div>
   
             <div class="accordion">
-              <button class="accordion-header">SpookyGames</button>
+              <button class="accordion-header" aria-expanded="false">SpookyGames</button>
               <div class="accordion-body">
                 <p>A Halloween-themed website showcasing a curated collection of video games with spooky atmospheres, action-packed moments, and a touch of jump-scare vibes.
-                <br/><br/> HTML CSS Bootstrap  </p>
+                <br/><div class="tech-stack">
+                  <span class="tech-card">HTML</span>
+                  <span class="tech-card">CSS</span>
+                  <span class="tech-card">Bootstrap </span>
+                </div>
+                </p> <br/>
                 <a href="Projects/SpookyGames/index.html" target="_blank">Visit SpookyGames</a>
               </div>
             </div>
@@ -98,7 +109,7 @@
             <h2>Experience</h2>
               <p>I'm currently diving into web development on my own and building some fun, experimental interfaces—just exploring and sharpening my skills while looking for my next opportunity.</p> <br/> 
                 <div class="accordion">
-                  <button class="accordion-header">Cei, by Zipor</button>
+                  <button class="accordion-header" aria-expanded="false">Cei, by Zipor</button>
                 <div class="accordion-body">
                   <p>Internship from FrontEnd Developer course
                     <br/> <br/> I worked with Google Sheets scripts, created image templates for a vertical cube display, and was responsible for migrating a website to a new domain and hosting server, among other tasks

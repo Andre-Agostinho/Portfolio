@@ -2,7 +2,7 @@
 :root {
   --bg-color: #0a192f;
   --text-color: #ccd6f6;
-  --accent-color: #64ffda;
+  --accent-color: rgba(100, 255, 219, 0.80);
   --secondary-color: #8892b0;
 }
 
@@ -166,6 +166,25 @@ body {
     border: none;
     cursor: pointer;
   }
+
+  .accordion-header[aria-expanded="true"]::after {
+    content: "▲";
+    float: right;
+  }
+  
+  .accordion-header[aria-expanded="false"]::after {
+    content: "▼";
+    float: right;
+  }
+
+  .accordion-header:hover {
+    background-color: rgb(100, 255, 218);
+  }
+
+  body.light-mode .accordion-header:hover {
+    background-color: rgb(100, 255, 218, 0.8);
+    color: var(--text-color);
+  }
   
   .accordion-body {
     padding: 1rem;
@@ -201,7 +220,8 @@ body {
   }
   
   .cv-button a {
-    background-color: #64ffda;
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     color: #0a192f;
     padding: 0.7rem 1.5rem;
     border-radius: 8px;
@@ -212,8 +232,17 @@ body {
   }
   
   .cv-button a:hover {
-    background-color: #52e0c4;
-    transform: scale(1.05);
+    background-color: rgb(100, 255, 218);
+    transform: scale(1.03);
+  }
+
+  body.light-mode .cv-button a {
+    color: var(--bg-color);
+  }
+
+  body.light-mode .cv-button a:hover {
+    background-color: rgb(100, 255, 218, 0.80);
+    color: var(--text-color);
   }
   
   footer {
@@ -281,6 +310,33 @@ body.light-mode .theme-toggle {
   transition: 1000ms;
 }
 
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: inset 0px 0px 5px 1px rgba(100, 255, 218, 0.4);
+  min-width: 75px;
+}
+
+.tech-card:hover {
+  transition: transform 0.3s ease;
+  box-shadow: 0px 0px 10px 2px rgba(100, 255, 218, 0.4);
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
   
 @media (max-width: 620px) {
 
@@ -292,6 +348,17 @@ body.light-mode .theme-toggle {
     top: 110%;
     right: 0%;
     cursor: progress;
+    z-index: 1000;
+  }
+
+  .tome_portal {
+    border-radius: 30%;
+    box-shadow: inset 0px 0px 15px 2px rgba(100, 255, 218, 0.6);
+    cursor: pointer;
+  }
+  
+  .tome_portal:hover {
+    box-shadow: 0 0 16px 3px rgba(255, 215, 0, 0.7);
   }
 
   header h1 {
@@ -384,13 +451,7 @@ body.light-mode .sticky-menuLinksShow a {
   color: #fafbf4;
 }
 
-.tome_portal {
-  background-color: #f4f4f4 ;
-}
-
-
-img[src="images/town_portal.png"] {
-  position: fixed;
+img[src="images/town-portal.png"] {
   position: fixed;
   display: block;
   width: 6%;
