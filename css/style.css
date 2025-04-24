@@ -13,6 +13,10 @@ body.light-mode {
   --secondary-color: #444;
 }
 
+html {
+  scroll-padding-top: 80px; /* Adjust this value to match your navbar height */
+}
+
 #landing {
     position: fixed;
     inset: 5px;
@@ -36,8 +40,15 @@ body.light-mode {
   
   #mainContent {
     opacity: 0;
-    /* transform: translateY(0); */
     transition: opacity 2s ease, transform 2s ease;
+  }
+
+  .sticky-menuLinks {
+    display: none;
+  }
+
+  .sticky-menuIcon {
+    display: none;
   }
 
   body.revealed #landing {
@@ -48,7 +59,6 @@ body.light-mode {
   
   body.revealed #mainContent {
     opacity: 1;
-    /* transform: translateY(0); */
   }
   
   body:not(.revealed) {
@@ -92,19 +102,21 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 0;
   }
   
   .sidebar {
     flex: 1;
     position: sticky;
-    top: 4rem;
+    top: 5rem;
+    left: 5rem;
     height: fit-content;
   }
   
   .sidebar ul, li {
     list-style: none;
     padding: 0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   
   .sidebar a {
@@ -250,7 +262,6 @@ body.light-mode .theme-toggle {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: fixed;
 }
 
 .sticky-header .portfolio-title {
@@ -267,10 +278,22 @@ body.light-mode .theme-toggle {
   pointer-events: auto;
   transform: translateY(0);
   position: sticky;
+  transition: 1000ms;
 }
 
   
 @media (max-width: 620px) {
+
+  .sticky-menuIcon {
+    display: block;
+    position: fixed;
+    font-size: larger;
+    font-weight: 800;
+    top: 110%;
+    right: 0%;
+    cursor: progress;
+  }
+
   header h1 {
     font-size: 2rem;
   }
@@ -284,7 +307,18 @@ body.light-mode .theme-toggle {
   }
 
   .sidebar {
-    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 50%;
+    margin-left: 8%;
+    top: 0;
+    left: 0;
+    flex-wrap: wrap ;
+  }
+
+  .social-icons {
+    margin-top: 0;
   }
 
   #FrontPage {
@@ -296,5 +330,83 @@ body.light-mode .theme-toggle {
     transition: transform 0.3s ease-out;
     position: relative;
 }
+
+.theme-toggle {
+  max-width: -webkit-fill-available;
+  right: 2%;
+  top: 1%;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: transform 0.2s ease;
+}
+
+#toggleThemeSticky {
+  right: 16%;
+  top: 20%;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: transform 0.2s ease;
+}
+
+.sticky-header .portfolio-title {
+  position: absolute;
+  left: 45%;
+  font-weight:500;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.sticky-menuLinks {
+  display: none;
+}
+
+.sticky-menuLinksShow {
+  display: flex;
+  position: fixed;
+  top: 190%;
+  right: 13%;
+  cursor: progress;
+  backdrop-filter: blur(16px);
+  background-color: #000000ab;
+  flex-wrap: wrap;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+body.light-mode .sticky-menuLinksShow a {
+  color: #fafbf4;
+}
+
+.tome_portal {
+  background-color: #f4f4f4 ;
+}
+
+
+img[src="images/town_portal.png"] {
+  position: fixed;
+  position: fixed;
+  display: block;
+  width: 6%;
+  right: 13%;
+  opacity: 1;
+  transition: 2s ease-out;
+}
+
+img[src="images/open_book_portal.png"] {
+  position: fixed;
+  display: block;
+  width: 8%;
+  right: 13%;
+  opacity: 1;
+  transition: 2s ease-out;
+}
+
 }
 
