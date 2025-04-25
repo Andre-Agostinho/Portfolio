@@ -9,6 +9,12 @@
   <script src="js/javascript.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("light-mode");
+    }
+  </script>
 </head>
 
 <body>
@@ -28,14 +34,16 @@
     <div class="sticky-header" id="stickyHeader">
       <span class="portfolio-title">André Agostinho Portfolio</span>
       <button id="toggleThemeSticky" class="theme-toggle">🌙</button>
-      <div> <span class="sticky-menuIcon" onclick="toggleMenu()"> <img src="images/town-portal.png" class="tome_portal"/>
-      <ul class="sticky-menuLinks" >
-        <li><a href="#me">Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-      </ul>
-      </span> </div>
     </div>
+       <span class="sticky-menuIcon" id="sticky-menuIcon">
+         <button onclick="toggleMenu()"><img src="images/town-portal.png" class="tome_portal"/></button>
+          <ul class="sticky-menuLinks" >
+            <li><a href="#me">Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+          </ul>
+       </span>
+    
 
       <div class="container">
         <!-- Left Column -->
@@ -51,13 +59,13 @@
           <div class="social-icons">
             <ul>
            <li> <a href="https://www.figma.com/@AndreAgostinho" target="_blank" title="Figma"> 
-              <img src="images/figma.png" alt="Figma" />
+              <img src="images/figma.png" alt="Glance my Figma" />
             </a></li>
             <li> <a href="https://github.com/Andre-Agostinho" target="_blank" title="GitHub"> 
-              <img src="images/github.png" alt="GitHub" />
+              <img src="images/github.png" alt="Visit My GitHub" />
             </a></li>
             <li> <a href="https://www.linkedin.com/in/andr%C3%A9-agostinho-18597610b/" target="_blank" title="LinkedIn"> 
-              <img src="images/linkedin.png" alt="LinkedIn" />
+              <img src="images/linkedin.png" alt="Check my LinkedIn" />
             </a></li>
           </ul>
           </div>
@@ -137,6 +145,6 @@
   </div>
 </div>
 
-
+<button id="backToTopBtn" title="Go to top">⬆️</button>
 </body>
 </html>

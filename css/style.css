@@ -15,6 +15,7 @@ body.light-mode {
 
 html {
   scroll-padding-top: 80px; /* Adjust this value to match your navbar height */
+  scroll-behavior: smooth;
 }
 
 #landing {
@@ -111,6 +112,7 @@ body {
     top: 5rem;
     left: 5rem;
     height: fit-content;
+    margin-top: -10px;
   }
   
   .sidebar ul, li {
@@ -129,6 +131,7 @@ body {
   .content {
     flex: 3;
     padding-left: 2rem;
+    margin-top: -30px;
   }
 
   .content section {
@@ -278,19 +281,19 @@ body.light-mode .theme-toggle {
 .sticky-header {
   top: 0;
   width: 100%;
-  background-color: var(--bg-color);
   color: var(--text-color);
   padding: 2rem 2rem;
   z-index: 999;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid var(--accent-color);
   opacity: 0;
-  pointer-events: none;
   transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 1s ease, transform 1s ease;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: hsl(216deg 65% 11% / 75%);
 }
 
 .sticky-header .portfolio-title {
@@ -307,7 +310,10 @@ body.light-mode .theme-toggle {
   pointer-events: auto;
   transform: translateY(0);
   position: sticky;
-  transition: 1000ms;
+}
+
+body.light-mode .sticky-header.visible {
+  color: var(--bg-color);
 }
 
 .tech-stack {
@@ -337,18 +343,54 @@ body.light-mode .theme-toggle {
   color: var(--bg-color);
 }
 
+#backToTopBtn {
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  background-color: rgb(100 255 219 / 60%);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 50%;
+  padding: 0.1rem 0.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.revealed #backToTopBtn {
+  display: block;
+}
+
+#backToTopBtn:hover {
+  transform: scale(1.1);
+  background-color: #52e0c4;
+}
+
   
 @media (max-width: 620px) {
 
-  .sticky-menuIcon {
-    display: block;
-    position: fixed;
-    font-size: larger;
-    font-weight: 800;
-    top: 110%;
-    right: 0%;
-    cursor: progress;
-    z-index: 1000;
+  #backToTopBtn.visible {
+    bottom: 10px;
+    right: 35px;
+    font-size: 1.3rem;
+    padding: 0.1rem 0.1rem;
+  }
+
+  .sticky-menuIcon.visible {
+    position: sticky !important;
+    top: 55px;
+    width: 100%;
+    z-index: 999;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
   }
 
   .tome_portal {
@@ -357,7 +399,9 @@ body.light-mode .theme-toggle {
     cursor: pointer;
   }
   
-  .tome_portal:hover {
+
+  /* // verificar // */
+  .tome_portal:active {
     box-shadow: 0 0 16px 3px rgba(255, 215, 0, 0.7);
   }
 
@@ -421,6 +465,14 @@ body.light-mode .theme-toggle {
   transition: transform 0.2s ease;
 }
 
+.sticky-header.visible {
+  opacity: 1;
+  top: 0;
+  pointer-events: auto;
+  transform: translateY(0);
+  position: sticky;
+}
+
 .sticky-header .portfolio-title {
   position: absolute;
   left: 45%;
@@ -457,7 +509,7 @@ img[src="images/town-portal.png"] {
   width: 6%;
   right: 13%;
   opacity: 1;
-  transition: 2s ease-out;
+  transition: 1s ease-out;
 }
 
 img[src="images/open_book_portal.png"] {
@@ -466,7 +518,7 @@ img[src="images/open_book_portal.png"] {
   width: 8%;
   right: 13%;
   opacity: 1;
-  transition: 2s ease-out;
+  transition: 1s ease-out;
 }
 
 }

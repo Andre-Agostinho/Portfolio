@@ -133,12 +133,15 @@ function modeToggler() {
 
   document.addEventListener("DOMContentLoaded", () => {
     const stickyHeader = document.getElementById("stickyHeader");
+    const stickyMenu = document.getElementById("sticky-menuIcon");
   
     window.addEventListener("scroll", () => {
       if (window.scrollY > 140) {
         stickyHeader.classList.add("visible");
+        stickyMenu.classList.add("visible");
       } else {
         stickyHeader.classList.remove("visible");
+        stickyMenu.classList.remove("visible");
       }
     });
   });
@@ -157,3 +160,29 @@ function modeToggler() {
       imageMenu.src = 'images/town-portal.png';
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    const isMobile = window.innerWidth < 620;
+    const hasRevealed = document.body.classList.contains("revealed");
+  
+    if (hasRevealed && window.scrollY > 300 && isMobile) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (document.body.classList.contains("revealed")) {
+      backToTopBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({top: 0,behavior: "smooth"});
+  });
+});
