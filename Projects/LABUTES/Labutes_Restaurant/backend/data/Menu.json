@@ -1,0 +1,51 @@
+[
+  {
+    "id": "b2212e63-c0a5-4782-8424-7c9adf4775dc",
+    "plateName": "Bitoque",
+    "price": "12",
+    "category": "main",
+    "photoUrl": "/images/1734114028782-128089161-prato-Bitoque.png"
+  },
+  {
+    "id": "22125d6d-d087-470e-9fcf-62e0244349e2",
+    "plateName": "Mousse Chocolate",
+    "price": "3",
+    "category": "dessert",
+    "photoUrl": "/images/1734114060237-214916701-sobremesa-mousse chocolate.png"
+  },
+  {
+    "id": "7f023265-7e88-4956-8653-ab6b278fab82",
+    "plateName": "Queijo e Enchidos",
+    "price": "7",
+    "category": "starter",
+    "photoUrl": "/images/1734114083763-699988084-entrada-Queijos Enchidos.jpg"
+  },
+  {
+    "id": "8b9a6588-11c8-4094-8106-a5aeb2c2a146",
+    "plateName": "Ovo Páscoa",
+    "price": "3,5",
+    "category": "dessert",
+    "photoUrl": "/images/1734435846861-361459178-coelhor_roubaOvo_pascoa.png"
+  },
+  {
+    "id": "62aff88f-b7a8-44c2-ba93-e1c90e465265",
+    "plateName": "uvas",
+    "price": "2,5",
+    "category": "dessert",
+    "photoUrl": "/images/1734688238226-946020676-sobremesa-uvas.png"
+  },
+  {
+    "id": "3a022cdb-b5c4-4451-aeb3-0529c2aa1cd6",
+    "plateName": "Salada de choco ",
+    "price": "6",
+    "category": "starter",
+    "photoUrl": "/images/1746108366782-671563082-entrada-ChocosTinta.webp"
+  },
+  {
+    "id": "230277cd-0a9d-4fae-82c2-6d746c63c2a8",
+    "plateName": "Choco Frito",
+    "price": "12.5",
+    "category": "main",
+    "photoUrl": "/images/1746110544316-768045054-prato-Choco Frrrito.jpg"
+  }
+]

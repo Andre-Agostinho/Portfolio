@@ -1,0 +1,122 @@
+
+
+ul {
+    list-style-type: none;
+    display:inline-flex;
+  }
+  
+
+.kitchen-orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .kitchen-order-item {
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #560909;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .kitchen-order-item h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .kitchen-status {
+    border: 2px groove white;
+    border-radius: 25px;
+    background-color: black;
+    height:25px;
+    padding: 10px 20px;
+  }
+
+  .start-cooking-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .start-cooking-btn:hover {
+    background-color: #2a2f56;
+  }
+  
+  .send-delivery-btn {
+    background-color: #f44336;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .send-delivery-btn:hover {
+    background-color: #2a2f56;
+  }
+  
+  #btnActiveMenu {
+      border: "5px solid gray";
+      padding: "10px";
+      border-radius: "15px";
+      background-color: "#f9f0e0";
+      color: black;
+  }
+
+ #homeHeader {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff6a00, #ff0000, #ff6a00);
+  background-size: 50% 50%;
+  animation: fireGradient 4s ease infinite;
+  box-shadow: 0 0 15px 5px rgba(255, 87, 34, 0.6),
+              0 0 30px 10px rgba(255, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Optional flicker effect */
+@keyframes fireGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+  #div1Home {
+    background: linear-gradient(180deg, #14d4d44f, hwb(180deg 4.17% 8.82% / 75%));
+    padding: 5px;
+    border: 2px solid #7f818f ;
+    border-radius: 25px;
+  }
+
+  #div1Home:hover {
+    box-shadow: 0 0 20px 3px #4CAF50;
+  }
+
+  #div2Home {
+    background: linear-gradient(180deg, #14d4d44f, hwb(180deg 4.17% 8.82% / 75%));
+    padding: 5px;
+    border: 2px solid #7f818f ;
+    border-radius: 25px;
+  }
+
+  #div2Home:hover {
+    box-shadow: 0 0 20px 3px #4CAF50;
+  }
