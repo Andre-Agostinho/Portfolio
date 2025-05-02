@@ -39,15 +39,14 @@ const sortedCategories = Object.keys(categorizedMenu).sort((a, b) => {
 
   return (
     <section>
-    <h2>Menu</h2>
-    {Object.keys(categorizedMenu).length === 0 && <p>No plates found</p>}
-
-    {Object.entries(categorizedMenu).map(([category, plates]) => (
-      <div key={category}>
-        <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
-        <ul>
-        {categorizedMenu[category].map((plate) => (
-          <li key={plate.id}>
+      <hr/>
+      {Object.keys(categorizedMenu).length === 0 && <p>No plates found</p>}
+       {Object.entries(categorizedMenu).map(([category, plates]) => (
+        <div key={category}>
+          <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+          <ul>
+           {categorizedMenu[category].map((plate) => (
+           <li key={plate.id}>
             <button
               onClick={() => onSelectPlate(plate)} id='btnActiveMenu'
               style={{

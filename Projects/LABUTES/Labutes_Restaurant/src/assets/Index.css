@@ -120,3 +120,35 @@ ul {
   #div2Home:hover {
     box-shadow: 0 0 20px 3px #4CAF50;
   }
+
+  @media (max-width: 600px) {
+    h1 {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+        padding: 10px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size for buttons */
+    }
+
+    p {
+        font-size: 14px; /* Adjust font size for paragraphs */
+        padding: 0 10px; /* Add padding for better readability */
+    }
+
+    /* Adjust layout for the order list */
+    ul {
+        padding: 10px; /* Add padding for better spacing */
+        list-style-type: none;
+        display: inline-flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+}

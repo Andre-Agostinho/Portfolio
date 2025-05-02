@@ -61,6 +61,7 @@ export default function KitchenMenu() {
 
   return (
     <div>
+      <h1> Kitchen Orders </h1>
     <div className="kitchen-orders-container">
       {kitchenOrders.map((order) => (
         <div key={order.id} className="kitchen-order-item">

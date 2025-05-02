@@ -68,7 +68,7 @@ function IndexMenu() {
       {userPlates.length > 0 && (
         <div>
           <button onClick={handleSendOrder}>Send Order</button>
-          <button onClick={clearOrder} style={{ marginLeft: "10px" }}> Clear Order </button>
+          <button onClick={clearOrder}> Clear Order </button>
         </div>
       )}
         {["staff", "manager"].includes(localStorage.getItem("role")) && <p> <Link to="/kitchen"><button>Kitchen Orders</button></Link>  </p>}
