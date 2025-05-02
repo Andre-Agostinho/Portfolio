@@ -370,6 +370,90 @@ body.revealed #backToTopBtn {
   background-color: #52e0c4;
 }
 
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-gallery {
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.modal-img {
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 75px;
+}
+
+.modal-img:hover { opacity: 0.7; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50%;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 60%;
+  max-width: 700px;
+  max-height: 50%;
+  animation: zoom 0.4s;
+}
+
+.arrowsModal {
+  display: flex;
+  justify-content: center;
+  font-size: xxx-large;
+  gap: 15%;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 15px;
+}
+
+.close {
+  position: inherit;
+  top: 25%;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 60px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
+@keyframes zoom {
+  from {transform:scale(0);}
+  to {transform:scale(1);}
+}
+
+
   
 @media (max-width: 620px) {
 

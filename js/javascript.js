@@ -186,3 +186,50 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({top: 0,behavior: "smooth"});
   });
 });
+
+
+const images = document.querySelectorAll('.modal-img');
+const modal = document.getElementById('myModal');
+const modalImg = document.getElementById('modalImage');
+const captionText = document.getElementById('caption');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+
+// Open modal when image clicked
+images.forEach((img, idx) => {
+  img.addEventListener('click', () => {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.textContent = img.alt;
+    currentIndex = idx;
+  });
+});
+
+// Close modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Navigate images
+function showImage(index) {
+  if (index < 0) index = images.length - 1;
+  if (index >= images.length) index = 0;
+  modalImg.src = images[index].src;
+  captionText.textContent = images[index].alt;
+  currentIndex = index;
+}
+
+prevBtn.onclick = function() {
+  showImage(currentIndex - 1);
+}
+nextBtn.onclick = function() {
+  showImage(currentIndex + 1);
+}
+
+// Optional: Close modal when clicking outside image
+modal.onclick = function(event) {
+  if (event.target === modal) modal.style.display = "none";
+}
